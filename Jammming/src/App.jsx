@@ -10,8 +10,10 @@ import Track from './components/Track';
 import Tracklist from './components/Tracklist';
 import styles from './styles/app.module.css';
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const[playlist, setPlaylist] = useState([]);
+  const[searchResults, setSearchResults] = useState([]);
 
   return (
     <>
