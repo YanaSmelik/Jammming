@@ -8,17 +8,27 @@ import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Track from './components/Track';
 import Tracklist from './components/Tracklist';
+import styles from './styles/app.module.css';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Playlist />
-      <SearchBar />
-      <SearchResults />
-      <Track />
-      <Tracklist />
+      <div className={styles.container}>
+        <div>
+          <SearchBar />
+        </div>
+        <div className={styles.mainContent}>
+          <SearchResults />
+
+          <div>
+            <Tracklist />
+            <Playlist />
+          </div>
+        </div>
+        <Track />
+      </div>
     </>
   )
 }
