@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 import Playlist from './components/Playlist';
 import SearchBar from './components/SearchBar';
@@ -9,11 +6,12 @@ import SearchResults from './components/SearchResults';
 import Track from './components/Track';
 import Tracklist from './components/Tracklist';
 import styles from './styles/app.module.css';
+import tracks from './data/tracks.json';
 
 
 function App() {
   const[playlist, setPlaylist] = useState([]);
-  const[searchResults, setSearchResults] = useState([]);
+  const[searchResults, setSearchResults] = useState(tracks);
 
   return (
     <>
@@ -22,10 +20,9 @@ function App() {
           <SearchBar />
         </div>
         <div className={styles.mainContent}>
-          <SearchResults />
 
           <div>
-            <Tracklist />
+            <SearchResults searchResults={searchResults}/>
             <Playlist />
           </div>
         </div>

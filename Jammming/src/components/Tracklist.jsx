@@ -2,9 +2,9 @@ import styles from '../styles/tracklist.module.css';
 import Track from './Track';
 
 // Reusable in SearchResults and in Playlist
-function Tracklist({tracklist}) {
+function Tracklist(props) {
 
-    let tracks = tracklist.map((track) => {
+    let tracks = props.tracklist.map((track) => {
       //TODO: track.id = from API 
       return <Track name={track.name} artist={track.artist} album={track.album} key={track.id} /> 
    })
