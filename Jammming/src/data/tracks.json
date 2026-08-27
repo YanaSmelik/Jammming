@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "A Broken Jar",
+        "artist": "La Dispute",
+        "album": "Wildlife"
+    },
+    {
+        "id": 2,
+        "name": "End of the Line",
+        "artist": "Nina Simone",
+        "album": "Pastel Blues"
+    },
+    {
+        "id": 3,
+        "name": "Formaldehyde",
+        "artist": "Editors",
+        "album": "The Weight of Your Love"
+    },
+    {
+        "id": 4,
+        "name": "Im A Hard Working Man",
+        "artist": "Abner Jay",
+        "album": "One Man Band"
+    },
+    {
+        "id": 5,
+        "name": "Take A Look Around",
+        "artist": "Limp Bizkit",
+        "album": "Chocolate Starfish And The Hot Dog Flavored Water"
+    },
+    {
+        "id": 6,
+        "name": "The God That Failed",
+        "artist": "Metallica",
+        "album": "Metallica (Remastered)"
+    }
+]
