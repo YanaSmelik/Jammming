@@ -4,6 +4,7 @@ import Track from './Track';
 // Reusable in SearchResults and in Playlist
 function Tracklist(props) {
 
+   console.log(props.tracklist);
     let tracks = props.tracklist.map((track) => {
       //TODO: track.id = from API 
       return <Track name={track.name} artist={track.artist} album={track.album} key={track.id} /> 

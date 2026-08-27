@@ -22,8 +22,8 @@ function App() {
         <div className={styles.mainContent}>
 
           <div>
-            <SearchResults searchResults={searchResults}/>
-            <Playlist />
+            <SearchResults tracklist={searchResults}/>
+            <Playlist tracklist={searchResults} />
           </div>
         </div>
         <Track />
