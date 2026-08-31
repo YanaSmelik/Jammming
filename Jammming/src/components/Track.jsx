@@ -2,12 +2,13 @@ import styles from '../styles/track.module.css';
 
 function Track(props){
 
+  //TODO handleAddTrackToPlaylist={props.handleAddTrackToPlaylist}
+
      return (
       <div className={styles.container}>
-    <h1>Track</h1>
-    <p>{props.name}</p>
-    <p>{props.artist}</p>
-    <p>{props.album}</p>
+    <h2>{props.name}</h2>
+    <p>Artist: {props.artist}</p>
+    <p>Album: {props.album}</p>
     </div>
  );
 }

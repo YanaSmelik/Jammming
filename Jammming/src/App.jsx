@@ -30,6 +30,12 @@ function App() {
     }
   }
 
+  function handleAddTrackToPlaylist(track) {
+    if(!playlist.includes(track)) {
+      setPlaylist([...playlist, track]);
+    }
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -38,7 +44,7 @@ function App() {
         </div>
         <div className={styles.mainContent}>
           <div>
-            <SearchResults searchResults={searchResults} />
+            <SearchResults searchResults={searchResults} handleAddTrackToPlaylist={handleAddTrackToPlaylist}/>
             <Playlist tracklist={searchResults} />
           </div>
         </div>
