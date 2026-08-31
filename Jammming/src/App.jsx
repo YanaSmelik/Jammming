@@ -6,11 +6,10 @@ import SearchResults from "./components/SearchResults";
 import Track from "./components/Track";
 import Tracklist from "./components/Tracklist";
 import styles from "./styles/app.module.css";
-import tracks from "./data/tracks.json";
 
 function App() {
   const [playlist, setPlaylist] = useState([]);
-  const [searchResults, setSearchResults] = useState(tracks);
+  const [searchResults, setSearchResults] = useState([]);
 
    const handleSearch = async (searchQuery) => {
      setSearchResults( await getData(searchQuery));
