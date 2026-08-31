@@ -12,15 +12,16 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
   const [searchResults, setSearchResults] = useState(tracks);
 
-  const handleSearch = (searchInput) => {
-    getData();
+  const handleSearch = (searchQuery) => {
+    getData(searchQuery);
   };
 
   //TODO CORS proxi, query for url
-  async function getData() {
-    const url = "https://api.deezer.com/user/2529/playlistshttps://musicbrainz.org/ws/2/recording?fmt=json&query=%22we%20will%20rock%20you%22%20AND%20arid:0383dadf-2a4e-4d10-a46a-e9e041da8eb3";
+  async function getData(searchQuery) {
+    const url = `https://api.deezer.com/search?q=${searchQuery}`;
+    const corsProxy = "https://proxy.corsfix.com/?";
     try {
-      const response = await fetch(url);
+      const response = await fetch(corsProxy + url); 
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
