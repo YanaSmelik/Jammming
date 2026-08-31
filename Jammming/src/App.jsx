@@ -12,11 +12,10 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
   const [searchResults, setSearchResults] = useState(tracks);
 
-  const handleSearch = (searchQuery) => {
-    getData(searchQuery);
+   const handleSearch = async (searchQuery) => {
+     setSearchResults( await getData(searchQuery));
   };
 
-  //TODO CORS proxi, query for url
   async function getData(searchQuery) {
     const url = `https://api.deezer.com/search?q=${searchQuery}`;
     const corsProxy = "https://proxy.corsfix.com/?";
@@ -26,7 +25,7 @@ function App() {
         throw new Error(`Response status: ${response.status}`);
       }
       const result = await response.json();
-      console.log(result);
+      return result;
     } catch (error) {
       console.log(error.message);
     }
@@ -40,7 +39,7 @@ function App() {
         </div>
         <div className={styles.mainContent}>
           <div>
-            <SearchResults tracklist={searchResults} />
+            <SearchResults searchResults={searchResults} />
             <Playlist tracklist={searchResults} />
           </div>
         </div>
