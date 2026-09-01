@@ -5,7 +5,7 @@ function SearchResults(props){
  return (
    <div className={styles.container}>
     <h1>Search Results</h1>
-    <Tracklist tracklist={props.searchResults} handleAddTrackToPlaylist={props.handleAddTrackToPlaylist}/>
+    <Tracklist tracklist={props.tracklist.data || []} handleAddTrackToPlaylist={props.handleAddTrackToPlaylist}/>
    </div>
  );
 }

@@ -42,8 +42,8 @@ function App() {
         </div>
         <div className={styles.mainContent}>
           <div>
-            <SearchResults searchResults={searchResults} handleAddTrackToPlaylist={handleAddTrackToPlaylist}/>
-            <Playlist tracklist={searchResults} />
+            <SearchResults tracklist={searchResults} handleAddTrackToPlaylist={handleAddTrackToPlaylist}/>
+            <Playlist tracklist={playlist} />
           </div>
         </div>
       </div>

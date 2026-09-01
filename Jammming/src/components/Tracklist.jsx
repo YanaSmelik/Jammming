@@ -3,8 +3,7 @@ import Track from "./Track";
 
 // Reusable in SearchResults and in Playlist
 function Tracklist(props) {
-   let tracklist = props.tracklist?.data || [];
-   let tracks = tracklist.map((track) => {
+   let tracks = props.tracklist.map((track) => {
       return (
          <Track
             track={track}
