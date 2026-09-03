@@ -8,6 +8,7 @@ import styles from "./styles/app.module.css";
 function App() {
   const [playlist, setPlaylist] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [playlistTitle, setPlaistTitle] = useState("");
 
   const handleSearch = async (searchQuery) => {
     setSearchResults(await getData(searchQuery));
@@ -49,7 +50,7 @@ function App() {
         <div className={styles.mainContent}>
           <div>
             <SearchResults tracklist={searchResults} onButtonClick={handleAddTrackToPlaylist} />
-            <Playlist tracklist={playlist} onButtonClick={handleRemoveTrackFromPlaylist} />
+            <Playlist tracklist={playlist} onButtonClick={handleRemoveTrackFromPlaylist} setPlaistTitle={setPlaistTitle} />
           </div>
         </div>
       </div>
