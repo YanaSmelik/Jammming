@@ -9,15 +9,15 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
-   const handleSearch = async (searchQuery) => {
-     setSearchResults( await getData(searchQuery));
+  const handleSearch = async (searchQuery) => {
+    setSearchResults(await getData(searchQuery));
   };
 
   async function getData(searchQuery) {
     const url = `https://api.deezer.com/search?q=${searchQuery}`;
     const corsProxy = "https://proxy.corsfix.com/?";
     try {
-      const response = await fetch(corsProxy + url); 
+      const response = await fetch(corsProxy + url);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
@@ -34,6 +34,12 @@ function App() {
     }
   }
 
+  function handleRemoveTrackFromPlaylist(track) {
+    if (playlist.includes(track)) {
+      setPlaylist(prevPlaylist => prevPlaylist.filter(item => item !== track ));
+    }
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -42,8 +48,8 @@ function App() {
         </div>
         <div className={styles.mainContent}>
           <div>
-            <SearchResults tracklist={searchResults} handleAddTrackToPlaylist={handleAddTrackToPlaylist}/>
-            <Playlist tracklist={playlist} />
+            <SearchResults tracklist={searchResults} onButtonClick={handleAddTrackToPlaylist} />
+            <Playlist tracklist={playlist} onButtonClick={handleRemoveTrackFromPlaylist} />
           </div>
         </div>
       </div>

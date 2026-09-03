@@ -8,7 +8,8 @@ function Tracklist(props) {
          <Track
             track={track}
             key={track.id}
-            handleAddTrackToPlaylist={props.handleAddTrackToPlaylist}
+            onButtonClick={props.onButtonClick}
+            isPlaylist={props.isPlaylist}
          />
       );
    });
